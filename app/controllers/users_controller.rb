@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :require_user_logged_in, only: [:show]
+  
   def index
     @users = User.order(id: :desc).page(params[:page]).per(5)
   end
@@ -16,9 +18,9 @@ class UsersController < ApplicationController
     
     if @user.save
       flash[:primary] = "ユーザを登録しました"
-      redirect_to user_path(@user)
+      redirect_to user_url(@user)  #後で変更
     else
-      flash[:danger] = "ユーザの登録に失敗しました"
+      flash.now[:danger] = "ユーザの登録に失敗しました"
       render :new
     end
   end
