@@ -1,0 +1,36 @@
+<div id= "logo">
+  <%= image_tag "catlogo.png",class: "d-inline-block",size: "70x70" %>
+  <span id="charlogo">PetPhoto</span>
+</div>
+
+<div class="row mt-3">
+  <div class="col-sm-6 offset-sm-3">
+    <%= form_with model: @user do |f| %>
+      <%= render "layouts/error_messages", model: f.object %>
+      
+      <div class="mb-3">
+        <%= f.label :name, "name" %>
+        <%= f.text_field :name,class: "form-control" %>
+      </div>
+      
+      <div class="mb-3">
+        <%= f.label :email, "email" %>
+        <%= f.email_field :email,class: "form-control" %>
+      </div>
+      
+      <div class="mb-3">
+        <%= f.label :password, "password" %>
+        <%= f.password_field :password,class: "form-control" %>
+      </div>
+      
+      <div class="mb-3">
+        <%= f.label :password_confirmation, "password(確認用)" %>
+        <%= f.password_field :password_confirmation,class: "form-control" %>
+      </div>
+      
+      <div class="text-center mb-3">
+        <%= f.submit "登録する",class: "btn btn-outline-warning w-50" %>
+      </div>    
+    <% end %>
+  </div>
+</div>
