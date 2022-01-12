@@ -1,12 +1,26 @@
-<div class="card bg-light mx-auto" style="width: 50%">
-  <div class="card-body">
-    <h5 class="card-title"><%= @user.name %></h5>
-    <a href="#" class="card-link">投稿 <%# post %>件</a>
-    <a href="#" class="card-link">フォロー <%# follow %>人</a>
-    <a href="#" class="card-link">フォロワー <%# follower %>人</a>
-    <a href="#" class="card-link">いいねした投稿 <%# post %></a>
-    <%# 場合によってfollowボタンを置く %>
+<div class="container">
+  <div class="card bg-light mx-auto mb-3" style="width: 50%">
+    <div class="card-body">
+      <h5 class="card-title"><%= @user.name %></h5>
+      <a href="#" class="card-link">投稿 <%= @count_posts %>件</a>
+      <a href="#" class="card-link">フォロー <%# follow %>人</a>
+      <a href="#" class="card-link">フォロワー <%# follower %>人</a>
+      <a href="#" class="card-link">いいねした投稿 <%# post %></a>
+      <%# 場合によってfollowボタンを置く %>
+    </div>
+  </div>
+  
+  <div class="row">
+    <% @posts.each do |post| %>
+      <div class="col-4">
+        <div class="card mb-3">  
+          <%= image_tag post.img.url %>
+          <div class="card-body">
+            <p class="card-text"><%= post.content %></p>
+            <%= link_to "投稿詳細",post_path(post) %>
+          </div>
+        </div>  
+      </div>
+    <% end %>  
   </div>
 </div>
-
-<%# 投稿一覧 %>

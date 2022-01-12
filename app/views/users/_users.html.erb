@@ -4,7 +4,7 @@
       <li class="card bg-light mb-3 mx-auto" style="width: 40%">
         <div class="card-body">
           <h5 class="card-title"><%= user.name %></h5>
-          <a href="<%= user_path(user) %>" class="card-link">投稿 <%# post %>件</a>
+          <a href="<%= user_path(user) %>" class="card-link">投稿 <%= user.posts.count %>件</a>
           <a href="#" class="card-link">フォロー <%# follow %>人</a>
           <a href="#" class="card-link">フォロワー <%# follower %>人</a>
           <%# フォローボタン %>

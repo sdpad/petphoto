@@ -1,0 +1,21 @@
+<div class="container bg-light">
+  <div class="row justify-content-around">
+    <div class="col-4">
+      <div class="card">
+        <%= image_tag @post.img.url,class: "card-img-top"%>
+        <div class="card-body">
+          <p class="card-text"><%= @post.content %></p>
+          <%# いいねボタン、followボタン %>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-4">
+      <p>コメント欄</p>
+    </div>
+  </div>
+  
+  <div class="text-center mt-4">
+    <%= link_to "この投稿を削除する",@post,method: :delete,data: {confirm: "You sure?"},class: "btn btn-danger" %>
+  </div>
+</div>
