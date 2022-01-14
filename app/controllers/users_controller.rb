@@ -19,6 +19,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     
     if @user.save
+      session[:user_id] = @user.id
       flash[:primary] = "ユーザを登録しました"
       redirect_to user_url(@user)  #後で変更
     else
@@ -26,6 +27,16 @@ class UsersController < ApplicationController
       render :new
     end
   end
+  
+  def followings
+    user = User.find(params[:id])
+    @followings = user.followings.order(id: :desc).page(params[:page]).per(5)
+  end
+  
+  def followers
+    user = User.find(params[:id])
+    @followers = user.followers.order(id: :desc).page(params[:page]).per(5)
+  end  
   
   private
   

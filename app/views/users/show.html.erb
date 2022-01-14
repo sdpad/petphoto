@@ -2,13 +2,23 @@
   <div class="card bg-light mx-auto mb-3" style="width: 50%">
     <div class="card-body">
       <h5 class="card-title"><%= @user.name %></h5>
-      <a href="#" class="card-link">投稿 <%= @count_posts %>件</a>
-      <a href="#" class="card-link">フォロー <%# follow %>人</a>
-      <a href="#" class="card-link">フォロワー <%# follower %>人</a>
-      <a href="#" class="card-link">いいねした投稿 <%# post %></a>
-      <%# 場合によってfollowボタンを置く %>
+      <div class="row">
+        <div class="col-9">
+          <a href="#" class="card-link">投稿 <%= @count_posts %>件</a>
+          <a href="<%= followings_user_path(@user) %>" class="card-link">フォロー <%= @count_followings %>人</a>
+          <a href="<%= followers_user_path(@user) %>" class="card-link">フォロワー <%= @count_followers %>人</a>
+          <a href="#" class="card-link">いいねした投稿 <%# post %></a>
+        </div>
+        <div class="col-3">
+          <% unless current_user == @user.id %>
+            <%= render "relationships/follow_button",user: @user %>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
+  
+  <h3 class="text-center my-3">投稿一覧</h3>
   
   <div class="row">
     <% @posts.each do |post| %>
