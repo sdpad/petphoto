@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="card bg-light mx-auto mb-3" style="width: 50%">
+  <div class="card bg-light mx-auto mb-3" style="width: 55%">
     <div class="card-body">
       <h5 class="card-title"><%= @user.name %></h5>
       <div class="row">
@@ -7,7 +7,7 @@
           <a href="#" class="card-link">投稿 <%= @count_posts %>件</a>
           <a href="<%= followings_user_path(@user) %>" class="card-link">フォロー <%= @count_followings %>人</a>
           <a href="<%= followers_user_path(@user) %>" class="card-link">フォロワー <%= @count_followers %>人</a>
-          <a href="#" class="card-link">いいねした投稿 <%# post %></a>
+          <a href="<%= likes_user_path(@user) %>" class="card-link">いいねした投稿 <%= @user.likes.count %>件</a>
         </div>
         <div class="col-3">
           <% unless current_user == @user.id %>
@@ -28,6 +28,9 @@
           <div class="card-body">
             <p class="card-text"><%= post.content %></p>
             <%= link_to "投稿詳細",post_path(post) %>
+            <div id="favorite_buttons_<%= post.id %>">
+              <%= render "favorites/favorite_button",post: post %>
+            </div>  
           </div>
         </div>  
       </div>

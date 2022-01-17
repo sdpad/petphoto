@@ -11,6 +11,8 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @comments = @post.comments.order(id: :desc)
+    @comment = current_user.comments.build
   end
 
   def create

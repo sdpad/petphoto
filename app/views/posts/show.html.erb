@@ -11,11 +11,34 @@
     </div>
     
     <div class="col-4">
-      <p>コメント欄</p>
+      <% if @comments %>
+        <div class="row mt-3">
+          <% @comments.each do |comment| %>
+            <div class="col-2 mb-3">
+              <%= comment.user.name %>
+            </div>
+            <div class="col-7 mb-3">
+              <p><%= comment.content %></p>
+            </div>
+            <div class="col-3 mb-3">
+              <%= render "comments/destroy_button",post: @post,comment: comment %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>  
+      <div class="text-center">
+        <%= form_with(model: [@post,@comment]) do |f| %>
+          <%= f.text_area :content %>
+          <%= f.hidden_field :post_id,value: @post.id %>
+          <%= f.submit "送信",class: "btn btn-outline-warning" %>
+        <% end %>
+      </div>
     </div>
   </div>
   
-  <div class="text-center mt-4">
-    <%= link_to "この投稿を削除する",@post,method: :delete,data: {confirm: "You sure?"},class: "btn btn-danger" %>
-  </div>
+  <% if current_user == @post.user %>
+    <div class="text-center mt-4">
+      <%= link_to "この投稿を削除する",@post,method: :delete,data: {confirm: "You sure?"},class: "btn btn-danger" %>
+    </div>
+  <% end %>  
 </div>

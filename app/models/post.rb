@@ -5,4 +5,9 @@ class Post < ApplicationRecord
   validates :img,presence: true
   
   mount_uploader :img,ImgUploader
+  
+  has_many :favorites
+  has_many :liked,through: :favorites,source: :user
+  
+  has_many :comments
 end

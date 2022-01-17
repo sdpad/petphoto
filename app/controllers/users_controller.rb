@@ -36,7 +36,12 @@ class UsersController < ApplicationController
   def followers
     user = User.find(params[:id])
     @followers = user.followers.order(id: :desc).page(params[:page]).per(5)
-  end  
+  end
+  
+  def likes
+    @user = User.find(params[:id])
+    @posts = @user.likes.order(id: :desc).page(params[:page]).per(9)
+  end
   
   private
   
