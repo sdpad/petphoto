@@ -1,5 +1,6 @@
 <% if logged_in? %>
   <%= render "toppages/posts_follow",posts: @posts %>
+  <%= paginate @posts %>
 <% else %>
   <div class="my-4 p-3 img-container">
     <%= image_tag "IMG-0761.JPG",class: "d-block mx-auto img-fluid img-shadow w-50" %>

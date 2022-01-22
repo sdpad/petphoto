@@ -236,3 +236,57 @@
      }
    }
  }
+ 
+ .users {
+   &.index {
+     .card {
+       width: 40%;
+     }
+     .card-top {
+       display: flex;
+       justify-content: space-between;
+     }
+     @media(max-width: 670px) {
+       .card {
+         width: 90%;
+       }
+       .card-link {
+         font-size: 8px;
+       }
+     }
+   }
+   &.followings {
+     .card {
+       width: 40%;
+     }
+     .card-top {
+       display: flex;
+       justify-content: space-between;
+     }
+     @media(max-width: 670px) {
+       .card {
+         width: 90%;
+       }
+       .card-link {
+         font-size: 8px;
+       }
+     }
+   }
+   &.followers {
+     .card {
+       width: 40%;
+     }
+     .card-top {
+       display: flex;
+       justify-content: space-between;
+     }
+     @media(max-width: 670px) {
+       .card {
+         width: 90%;
+       }
+       .card-link {
+         font-size: 8px;
+       }
+     }
+   }
+ }

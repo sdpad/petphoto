@@ -5,7 +5,7 @@
       
       <div class="mb-3">
         <%= f.label :img, "画像" %>
-        <%= f.file_field :img,class: "form-control" %>
+        <%= f.file_field :img,class: "form-control",onchange: "previewImage()" %>
       </div>
       
       <div class="mb-3">
@@ -16,7 +16,7 @@
       <div class="text-center">
         <%= f.submit "投稿",class: "btn btn-outline-warning w-50" %>
       </div>
-      
     <% end %>
+  
   </div>
 </div>

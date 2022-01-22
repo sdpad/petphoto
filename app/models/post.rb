@@ -6,8 +6,8 @@ class Post < ApplicationRecord
   
   mount_uploader :img,ImgUploader
   
-  has_many :favorites
+  has_many :favorites,dependent: :destroy
   has_many :liked,through: :favorites,source: :user
   
-  has_many :comments
+  has_many :comments,dependent: :destroy
 end

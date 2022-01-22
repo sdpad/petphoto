@@ -17,7 +17,7 @@
       
   <% if current_user == @post.user %>
     <div class="text-center mt-4">
-      <%= link_to "この投稿を削除する",@post,method: :delete,data: {confirm: "You sure?"},class: "btn btn-danger" %>
+      <%= link_to "この投稿を削除する",@post,method: :delete,data: {confirm: "削除しますか?(確認)"},class: "btn btn-danger" %>
     </div>
   <% end %>
     
@@ -41,8 +41,10 @@
           </tbody>
         <% end %>
       <% end %>
-    </table>    
+    </table>
   </div>
+  
+  <%= paginate @comments %>
   
   <div class="col-sm-4 mx-auto comment-form">
     <%= form_with(model: [@post,@comment]) do |f| %>
