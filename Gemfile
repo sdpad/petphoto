@@ -48,3 +48,4 @@ gem "pagy"
 gem "kaminari"
 gem "carrierwave"
 gem "pry-byebug",group: :development
+gem "rails-i18n"
