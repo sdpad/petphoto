@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :require_user_logged_in, only: [:show]
+  before_action :require_user_logged_in, only: [:show,:followings,:followers,:likes]
   
   def index
     @users = User.order(id: :desc).page(params[:page]).per(5)
@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @posts = @user.posts
+    @posts = @user.posts.order(id: :desc).page(params[:page]).per(9)
     counts(@user)
   end
 
@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     
     if @user.save
       session[:user_id] = @user.id
-      flash[:primary] = "ユーザを登録しました"
+      flash[:warning] = "ユーザを登録しました"
       redirect_to user_url(@user)  #後で変更
     else
       flash.now[:danger] = "ユーザの登録に失敗しました"

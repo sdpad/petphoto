@@ -1,38 +1,38 @@
 <div class="container">
-  <div class="card bg-light mx-auto mb-3" style="width: 55%">
+  <div class="card card-user bg-light mx-auto mb-3">
     <div class="card-body">
-      <h5 class="card-title"><%= @user.name %></h5>
-      <div class="row">
-        <div class="col-9">
-          <a href="#" class="card-link">投稿 <%= @count_posts %>件</a>
-          <a href="<%= followings_user_path(@user) %>" class="card-link">フォロー <%= @count_followings %>人</a>
-          <a href="<%= followers_user_path(@user) %>" class="card-link">フォロワー <%= @count_followers %>人</a>
-          <a href="<%= likes_user_path(@user) %>" class="card-link">いいねした投稿 <%= @user.likes.count %>件</a>
-        </div>
-        <div class="col-3">
-          <% unless current_user == @user.id %>
+      <div class="card-top">
+        <h5 class="card-title"><%= @user.name %></h5>
+        <% unless current_user == @user.id %>
+          <div id="follow_buttons_<%= @user.id %>">
             <%= render "relationships/follow_button",user: @user %>
-          <% end %>
-        </div>
+          </div>
+        <% end %>
+      </div>
+      <div>
+        <a href="<%= followings_user_path(@user) %>" class="card-link">フォロー <%= @count_followings %>人</a>
+        <a href="<%= followers_user_path(@user) %>" class="card-link">フォロワー <%= @count_followers %>人</a>
+        <a href="<%= likes_user_path(@user) %>" class="card-link">いいねした投稿 <%= @user.likes.count %>件</a>
       </div>
     </div>
   </div>
   
-  <h3 class="text-center my-3">投稿一覧</h3>
+  <h3 class="text-center my-3">投稿 <%= @count_posts %>件</h3>
   
-  <div class="row">
+  <div class="row row-eq-height">
     <% @posts.each do |post| %>
-      <div class="col-4">
-        <div class="card mb-3">  
-          <%= image_tag post.img.url %>
-          <div class="card-body">
-            <p class="card-text"><%= post.content %></p>
-            <%= link_to "投稿詳細",post_path(post) %>
-            <div id="favorite_buttons_<%= post.id %>">
-              <%= render "favorites/favorite_button",post: post %>
-            </div>  
+      <div class="card col-sm-4 mb-3">
+        <div class="card-img-top h-75 card-img bg-light img-fluid">
+          <%= image_tag post.img.url,class: "w-100" %>
+        </div>
+        <div class="card-body">
+          <p class="card-text"><%= post.content.truncate(25) %></p>
+          <%= link_to "投稿詳細",post_path(post) %>
+          <div id="favorite_buttons_<%= post.id %>" class="favorite-layout">
+            <%= render "favorites/favorite_button",post: post %>
           </div>
-        </div>  
+          <p class="created-time"><%= post.created_at.strftime("%Y-%m-%d %H:%M") %></p>
+        </div>
       </div>
     <% end %>  
   </div>

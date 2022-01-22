@@ -1,16 +1,20 @@
 <div class="container">
-  <div class="row mt-3">
+  <div class="row row-eq-height mt-3">
     <% posts.each do |post| %>
-      <div class="col-4">
-        <div class="card mb-3">
-          <div class="card-header">
-            <%= post.user.name %>
+      <div class="card col-sm-4 col-6 mb-3">
+        <div class="card-header bg-white">
+          <%= post.user.name %>
+        </div>
+        <div class="card-img h-75">
+          <%= image_tag post.img.url,class: "w-100" %>
+        </div>
+        <div class="card-body">
+          <p class="card-text"><%= post.content.truncate(25) %></p>
+          <%= link_to "投稿詳細",post_path(post),class: "link-text" %>
+          <div id="favorite_buttons_<%= post.id %>" class="favorite-layout">
+            <%= render "favorites/favorite_button",post: post %>
           </div>
-          <%= image_tag post.img.url %>
-          <div class="card-body">
-            <p class="card-text"><%= post.content %></p>
-            <%# いいねボタン,コメント等 %>
-          </div>
+          <p class="created-time"><%= post.created_at.strftime("%Y-%m-%d %H:%M") %></p>
         </div>
       </div>
     <% end %>

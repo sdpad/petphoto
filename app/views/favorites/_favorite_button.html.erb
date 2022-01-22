@@ -1,16 +1,17 @@
 <% if current_user.favoriting?(post) %>
   <%= form_with(model: current_user.favorites.find_by(post_id: post.id),method: :delete,local: false) do |f| %>
     <%= hidden_field_tag :post_id,post.id %>
-    <%= f.submit "いいね解除",class: "btn btn-danger" %>
+    <%= f.button type: "submit" do %>
+      <%= image_tag "heart-active.svg",class: "favorite-img" %>
+    <% end %>  
     <%= post.liked.count %>
-    <%#<%= f.button type: "submit" do %>
-      <%#<i class="fas fa-heart"></i>
-    <% end %>
   <% end %>  
 <% else %>
   <%= form_with(model: current_user.favorites.build,local: false) do |f| %>
     <%= hidden_field_tag :post_id,post.id %>
-    <%= f.submit "いいね",class: "btn btn-primary" %>
+    <%= f.button type: "submit" do %>
+      <%= image_tag "heart.svg",class: "favorite-img" %>
+    <% end %>  
     <%= post.liked.count %>
   <% end %>
 <% end %>

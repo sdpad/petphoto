@@ -1,0 +1,230 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ 
+ 
+ html {
+   min-height: 100%;
+ }
+ 
+ /*#ffffe0 0%,#ffffe0 50%,#fafad2 50%,#fafad2 100%*/
+ /*#ffffe0 0%,#ffffe0 50%,#fff8dc 50%,#fff8dc 100%*/
+ /*linear-gradient(45deg,#ffffe0 0%,#ffffe0 50%,#fafad2 50%,#fafad2 100%)*/
+ 
+ body {
+   background: linear-gradient(45deg,#fffff0 0%,#fffff0 50%,#fdf5e6 50%,#fdf5e6 100%);
+ }
+ 
+ /*flash message*/
+ .alert {
+   width: 60%;
+   margin: 15px auto;
+ }
+ 
+ /*ボタン類*/
+ #btn_follow {
+   margin-top: 3px;
+   padding-top: 0px;
+   padding-bottom: 0px;
+ }
+ 
+ #btn_unfollow {
+   margin-top: 3px;
+   padding-top: 0px;
+   padding-bottom: 0px;
+ }
+
+ .toppages {
+   &.index {
+     .img-container {
+       opacity: 0.5;
+     }
+     .img-shadow {
+       box-shadow: 0 0 10px #808080;
+     }
+     .row-eq-height {
+       display: flex;
+       flex-wrap: wrap;
+     }
+     .card-img {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+     }
+     .card-header {
+       font-weight: bolder;
+       font-size: 20px;
+     }
+     .link-text {
+       font-size: 12px;
+     }
+     .created-time {
+       margin-top: 5px;
+       margin-bottom: 0px;
+       text-align: end;
+     }
+     @media(max-width: 670px){
+       .card-header {
+         font-size: 15px;
+       }
+       .card-text {
+         font-size: 14px;
+       }
+       .favorite-img {
+         width: 15px;
+         height: 15px;
+       }
+       .created-time {
+         font-size: 7px;
+       }
+     }
+   }
+ }
+ 
+ .users {
+   &.show {
+     .row-eq-height {
+       display: flex;
+       flex-wrap: wrap; 
+     }
+     .card-img-top {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+     }
+     .card-user {
+       width: 360px;
+     }
+     .card-img {
+       margin-top: 10px;
+     }
+     .favorite-layout {
+       margin-top: 15px;
+     }
+     .created-time {
+       margin-top: 5px;
+       margin-bottom: 0px;
+       text-align: end;
+     }
+     .card-top {
+       display: flex;
+       justify-content: space-between;
+     }
+     /*smartphone用*/
+     @media(max-width: 670px) {
+       .card-user {
+         width: 80%;
+       }
+       .card-user .card-link {
+         font-size: 10px;
+       }
+     }
+   }
+ }
+ 
+ .users {
+   &.likes {
+     .row-eq-height {
+       display: flex;
+       flex-wrap: wrap;
+     }
+     .card-img {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+     }
+     .card-header {
+       font-weight: bolder;
+       font-size: 20px;
+     }
+     .created-time {
+       margin-top: 5px;
+       margin-bottom: 0px;
+       text-align: end;
+     }
+     .favorite-layout {
+       margin-top: 15px;
+     }
+     .link-text {
+       font-size: 12px;
+     }
+     @media(max-width: 670px) {
+       .card-header {
+         font-size: 15px;
+       }
+       .card-text {
+         font-size: 14px;
+       }
+       .favorite-img {
+         width: 15px;
+         height: 15px;
+       }
+       .created-time {
+         font-size: 7px;
+       }
+     }
+   }
+ }
+ 
+ .posts {
+   &.show {
+     .card {
+       width: 50%;
+     }
+     .card-img {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+     }
+     .card-header {
+       font-weight: bolder;
+       font-size: 20px;
+     }
+     .created-time {
+       margin-top: 5px;
+       margin-bottom: 0px;
+       text-align: end;
+     }
+     .comment {
+       border: thick double #e6e6fa;
+       margin-top: 20px;
+     }
+     .comment-form {
+       margin-top: 10px;
+     }
+     @media(max-width: 670px) {
+       .card {
+         width: 80%;
+       }
+       .created-time {
+         font-size: 7px;
+       }
+       .comment {
+         width: 100%;
+         margin-top: 10px;
+       }
+       .comment span {
+         font-size: 7px;
+       }
+       .destroy-button {
+         font-size: 7px;
+       }
+       .favorite-img {
+         width: 15px;
+         height: 15px;
+       }
+     }
+   }
+ }

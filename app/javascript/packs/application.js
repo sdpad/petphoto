@@ -7,11 +7,12 @@ require('jquery')
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import "channels"
+//import '@fontawesome/fontawesome-free/js/fontawesome';
+//import '@fontawesome/fontawesome-free/js/solid';
+//import '@fontawesome/fontawesome-free/js/regular';
+//import '@fontawesome/fontawesome-free/js/brands';
 
 Rails.start()
 Turbolinks.start()
 
-//import '@fortawesome/fontawesome-free/js/fontawesome';
-//import '@fortawesome/fontawesome-free/js/solid';
-//import '@fortawesome/fontawesome-free/js/regular';
-//import '@fortawesome/fontawesome-free/js/brands';
+

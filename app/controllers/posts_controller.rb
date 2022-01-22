@@ -11,14 +11,14 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @comments = @post.comments.order(id: :desc)
+    @comments = @post.comments.order(id: :desc).page(params[:page]).per(10)
     @comment = current_user.comments.build
   end
 
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
-      flash[:primary] = "投稿に成功しました"
+      flash[:warning] = "投稿に成功しました"
       redirect_to post_url(@post)
     else
       flash.now[:danger] = "投稿できませんでした"
@@ -28,7 +28,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
-    flash[:primary] = "投稿を削除しました"
+    flash[:warning] = "投稿を削除しました"
     redirect_to user_url(current_user)
   end
   

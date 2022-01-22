@@ -1,44 +1,57 @@
-<div class="container bg-light">
-  <div class="row justify-content-around">
-    <div class="col-4">
-      <div class="card">
-        <%= image_tag @post.img.url,class: "card-img-top"%>
-        <div class="card-body">
-          <p class="card-text"><%= @post.content %></p>
-          <%# いいねボタン、followボタン %>
-        </div>
-      </div>
+<div class="container">
+  <div class="card mx-auto col-6">
+    <div class="card-header bg-white">
+      <%= @post.user.name %>
     </div>
-    
-    <div class="col-4">
-      <% if @comments %>
-        <div class="row mt-3">
-          <% @comments.each do |comment| %>
-            <div class="col-2 mb-3">
-              <%= comment.user.name %>
-            </div>
-            <div class="col-7 mb-3">
-              <p><%= comment.content %></p>
-            </div>
-            <div class="col-3 mb-3">
-              <%= render "comments/destroy_button",post: @post,comment: comment %>
-            </div>
-          <% end %>
-        </div>
-      <% end %>  
-      <div class="text-center">
-        <%= form_with(model: [@post,@comment]) do |f| %>
-          <%= f.text_area :content %>
-          <%= f.hidden_field :post_id,value: @post.id %>
-          <%= f.submit "送信",class: "btn btn-outline-warning" %>
-        <% end %>
+    <div class="card-img h-50">
+      <%= image_tag @post.img.url,class: "card-img-top"%>
+    </div>
+    <div class="card-body">
+      <p class="card-text"><%= @post.content %></p>
+      <div id="favorite_buttons_<%= @post.id %>">
+        <%= render "favorites/favorite_button",post: @post %>
       </div>
+      <p class="created-time"><%= @post.created_at.strftime("%Y-%m-%d %H:%M") %></p>
     </div>
   </div>
-  
+      
   <% if current_user == @post.user %>
     <div class="text-center mt-4">
       <%= link_to "この投稿を削除する",@post,method: :delete,data: {confirm: "You sure?"},class: "btn btn-danger" %>
     </div>
-  <% end %>  
+  <% end %>
+    
+  <div class="comment bg-light mx-auto">
+    <table class="table table-borderless">
+      <thead>
+        <tr class="table-secondary">
+          <th scope="col"><span>user</span></th>
+          <th scope="col"><span>comment</span></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <% if @comments %>
+        <% @comments.each do |comment| %>
+          <tbody>
+            <tr>
+              <td><span><%= comment.user.name %></span></td>
+              <td><span><%= comment.content %></span></td>
+              <td class="text-end"><%= render "comments/destroy_button",post: @post,comment: comment %></td>
+            </tr>
+          </tbody>
+        <% end %>
+      <% end %>
+    </table>    
+  </div>
+  
+  <div class="col-sm-4 mx-auto comment-form">
+    <%= form_with(model: [@post,@comment]) do |f| %>
+      <%= f.text_area :content,class: "form-control" %>
+      <%= f.hidden_field :post_id,value: @post.id %>
+      <div class="text-center my-3">
+        <%= f.submit "送信",class: "btn btn-outline-warning" %>
+      </div>
+    <% end %>
+  </div>  
+    
 </div>
