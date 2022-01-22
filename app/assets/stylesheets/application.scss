@@ -19,12 +19,20 @@
    min-height: 100%;
  }
  
- /*#ffffe0 0%,#ffffe0 50%,#fafad2 50%,#fafad2 100%*/
- /*#ffffe0 0%,#ffffe0 50%,#fff8dc 50%,#fff8dc 100%*/
- /*linear-gradient(45deg,#ffffe0 0%,#ffffe0 50%,#fafad2 50%,#fafad2 100%)*/
- 
  body {
    background: linear-gradient(45deg,#fffff0 0%,#fffff0 50%,#fdf5e6 50%,#fdf5e6 100%);
+ }
+ 
+ /*logo周り*/
+ #logo {
+   text-align: center;
+   margin-top: 80px;
+ }
+
+ #charlogo {
+   display: inline-block;
+   margin-left: 10px;
+   font-size: 30px;
  }
  
  /*flash message*/
@@ -289,4 +297,21 @@
        }
      }
    }
+ }
+ 
+ /*ページネーション関係*/
+ .pagination {
+   justify-content: center;
+ }
+
+ .pagination li .page-link {
+   border: none;
+ }
+
+ .pagination .active .page-link {
+   border-radius: 20px;
+ }
+
+ .pagination li .page-link:hover {
+   border-radius: 20px;
  }
