@@ -127,6 +127,9 @@
        display: flex;
        justify-content: space-between;
      }
+     .link-text {
+       font-size: 12px;
+     }
      /*smartphone用*/
      @media(max-width: 670px) {
        .card-user {
