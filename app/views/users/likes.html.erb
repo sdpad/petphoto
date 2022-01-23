@@ -1,7 +1,7 @@
 <% if current_user == @user %>
-  <h3 class="mt-3">いいねした投稿 <%= @user.likes.count %>件</h3>
+  <h3 class="mt-3">いいねした投稿 <%= @count_likes %>件</h3>
 <% else %>
-  <h3 class="mt-3"><%= @user.name %>がいいねした投稿 <%= @user.likes.count %>件</h3>
+  <h3 class="mt-3"><%= @user.name %>がいいねした投稿 <%= @count_likes %>件</h3>
 <% end %>
 
 <%= render "toppages/posts_follow",posts: @posts %>

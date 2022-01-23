@@ -12,7 +12,7 @@
       <div>
         <a href="<%= followings_user_path(@user) %>" class="card-link">フォロー <%= @count_followings %>人</a>
         <a href="<%= followers_user_path(@user) %>" class="card-link">フォロワー <%= @count_followers %>人</a>
-        <a href="<%= likes_user_path(@user) %>" class="card-link">いいねした投稿 <%= @user.likes.count %>件</a>
+        <a href="<%= likes_user_path(@user) %>" class="card-link">いいねした投稿 <%= @count_likes %>件</a>
       </div>
     </div>
   </div>

@@ -8,7 +8,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @comments = @post.comments.order(id: :desc).page(params[:page]).per(10)
+    @comments = @post.comments.includes(:user).order(id: :desc).page(params[:page]).per(10)
     @comment = current_user.comments.build
   end
 

@@ -40,7 +40,8 @@ class UsersController < ApplicationController
   
   def likes
     @user = User.find(params[:id])
-    @posts = @user.likes.order(id: :desc).page(params[:page]).per(12)
+    @posts = @user.likes.includes(:user).order(id: :desc).page(params[:page]).per(12)
+    counts(@user)
   end
   
   private
