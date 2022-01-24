@@ -15,3 +15,6 @@ ja:
         img: 画像
       comment:
         content: コメント
+  time:
+    formats:
+      default: "%Y/%m/%d %H:%M:%S"

@@ -27,6 +27,7 @@ module Petphotos
     #言語設定
     I18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
     config.i18n.default_locale = :ja
+    config.time_zone = 'Tokyo'
    
     # Configuration for the application, engines, and railties goes here.
     #
