@@ -9,7 +9,7 @@
           <%= image_tag post.img.url,class: "w-100" %>
         </div>
         <div class="card-body">
-          <p class="card-text"><%= post.content.truncate(25) %></p>
+          <p class="card-text"><%= simple_format(post.content.truncate(25)) %></p>
           <%= link_to "投稿詳細",post_path(post),class: "link-text" %>
           <div id="favorite_buttons_<%= post.id %>" class="favorite-layout">
             <%= render "favorites/favorite_button",post: post %>

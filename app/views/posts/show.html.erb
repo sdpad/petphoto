@@ -7,7 +7,7 @@
       <%= image_tag @post.img.url,class: "card-img-top"%>
     </div>
     <div class="card-body">
-      <p class="card-text"><%= @post.content %></p>
+      <p class="card-text"><%= simple_format(@post.content) %></p>
       <div id="favorite_buttons_<%= @post.id %>">
         <%= render "favorites/favorite_button",post: @post %>
       </div>
@@ -35,7 +35,7 @@
           <tbody>
             <tr>
               <td><span><%= comment.user.name %></span></td>
-              <td><span><%= comment.content %></span></td>
+              <td><span><%= simple_format(comment.content) %></span></td>
               <td class="text-end"><%= render "comments/destroy_button",post: @post,comment: comment %></td>
             </tr>
           </tbody>
