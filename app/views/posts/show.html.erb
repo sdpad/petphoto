@@ -34,8 +34,8 @@
         <% @comments.each do |comment| %>
           <tbody>
             <tr>
-              <td><span><%= comment.user.name %></span></td>
-              <td><span><%= simple_format(comment.content) %></span></td>
+              <td><span class="user-name"><%= comment.user.name %></span></td>
+              <td><span><%= comment.content %></span></td>
               <td class="text-end"><%= render "comments/destroy_button",post: @post,comment: comment %></td>
             </tr>
           </tbody>

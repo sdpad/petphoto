@@ -216,9 +216,13 @@
      .comment {
        border: thick double #e6e6fa;
        margin-top: 20px;
+       width: 80%;
      }
      .comment-form {
        margin-top: 10px;
+     }
+     .user-name {
+       font-weight: bolder;
      }
      @media(max-width: 670px) {
        .card {
