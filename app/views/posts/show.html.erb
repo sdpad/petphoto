@@ -4,10 +4,10 @@
       <%= @post.user.name %>
     </div>
     <div class="card-img h-50">
-      <%= image_tag @post.img.url,class: "card-img-top"%>
+      <%= image_tag @post.img.url,class: "card-img-top",alt: "投稿された画像"%>
     </div>
     <div class="card-body">
-      <p class="card-text"><%= simple_format(@post.content) %></p>
+      <p class="card-text"><%= @post.content %></p>
       <div id="favorite_buttons_<%= @post.id %>">
         <%= render "favorites/favorite_button",post: @post %>
       </div>
@@ -36,7 +36,9 @@
             <tr>
               <td><span class="user-name"><%= comment.user.name %></span></td>
               <td><span><%= comment.content %></span></td>
-              <td class="text-end"><%= render "comments/destroy_button",post: @post,comment: comment %></td>
+              <td class="text-end">
+                <%= render "comments/destroy_button",post: @post,comment: comment %>
+              </td>
             </tr>
           </tbody>
         <% end %>

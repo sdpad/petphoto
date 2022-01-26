@@ -1,16 +1,16 @@
 <% unless current_user == user %>
   <% if current_user.following?(user) %>
     <%= form_with(model: current_user.relationships.find_by(follow_id: user.id),method: :delete,local: false) do |f| %>
-      <%= hidden_field_tag :follow_id,user.id %>
+      <%= hidden_field_tag :follow_id,user.id,id: "follow_#{user.id}" %>
       <div class="btn-layout">
-        <%= f.submit "unfollow",class: "btn btn-danger",id: "btn_unfollow" %>
+        <%= f.submit "unfollow",class: "btn btn-danger btn_unfollow" %>
       </div>
     <% end %>
   <% else %>
     <%= form_with(model: current_user.relationships.build,local: false) do |f| %>
-      <%= hidden_field_tag :follow_id,user.id %>
+      <%= hidden_field_tag :follow_id,user.id,id: "follow_#{user.id}" %>
       <div class="btn-layout">
-        <%= f.submit "follow",class: "btn btn-primary",id: "btn_follow" %>
+        <%= f.submit "follow",class: "btn btn-primary btn_follow" %>
       </div>
     <% end %>
   <% end %>

@@ -23,7 +23,7 @@
     <% @posts.each do |post| %>
       <div class="card col-sm-4 mb-3">
         <div class="card-img-top h-75 card-img bg-light img-fluid">
-          <%= image_tag post.img.url,class: "w-100" %>
+          <%= image_tag post.img.url,class: "w-100",alt: "投稿された画像" %>
         </div>
         <div class="card-body">
           <p class="card-text"><%= post.content.truncate(25) %></p>
