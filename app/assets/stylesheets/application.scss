@@ -33,6 +33,16 @@
    display: inline-block;
    margin-left: 10px;
    font-size: 30px;
+   font-family: 'Caveat', cursive;
+ }
+ 
+ /*navbar周り*/
+ .navbar-brand {
+   font-family: 'Caveat', cursive;
+ }
+ 
+ .nav-link {
+   font-family: 'Caveat', cursive;
  }
  
  /*flash message*/
@@ -138,6 +148,9 @@
      .link-text {
        font-size: 12px;
      }
+     h3 {
+       font-family: 'Caveat', cursive;
+     }
      /*smartphone用*/
      @media(max-width: 670px) {
        .card-user {
@@ -169,6 +182,9 @@
        margin-top: 5px;
        margin-bottom: 0px;
        text-align: end;
+     }
+     h3 {
+       font-family: 'Caveat', cursive;
      }
      .favorite-layout {
        margin-top: 15px;
