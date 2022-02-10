@@ -25,4 +25,8 @@
 このペットの写真を投稿するアプリを制作しました。
 
 ## アプリリンク
-#### https://pet-photo-app.herokuapp.com/
+##### https://pet-photo-app.herokuapp.com/  
+
+##### テストアカウント  
+email: test@example.com  
+password: test  
