@@ -1,5 +1,5 @@
 # README
-![petphoto-new](https://user-images.githubusercontent.com/95406672/153350835-78224e75-19c9-46d5-abf7-9e3073d27b0b.png)
+![petphoto-up](https://user-images.githubusercontent.com/95406672/153352536-c8989948-ccca-42f2-84e4-88b769097435.png)
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
