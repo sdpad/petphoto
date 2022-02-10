@@ -1,4 +1,5 @@
 # README
+{: align="center"}
 ![petphoto-up](https://user-images.githubusercontent.com/95406672/153352536-c8989948-ccca-42f2-84e4-88b769097435.png)
 
 This README would normally document whatever steps are necessary to get the
