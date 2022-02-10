@@ -68,4 +68,4 @@ password: test
   * heroku
 
 ## ER図
-<img src="ER-petphoto.png">
+![ER petphoto](https://user-images.githubusercontent.com/95406672/153440353-ea3487ec-6e3e-4839-913d-4fbbcb5616ad.png)
