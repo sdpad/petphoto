@@ -56,6 +56,10 @@ password: test
     <td><img alt="petphoto-toppage" src="https://user-images.githubusercontent.com/95406672/153592771-b7b8e353-e5f0-49b9-a1e1-8f256bf28349.png"></td>
     <td><img alt="petphoto-signup" src="https://user-images.githubusercontent.com/95406672/153594569-a4bdd66a-9b41-449e-8f92-fa044cb9defa.png"></td>
   </tr>
+  <tr>
+    <td><img alt="petphoto-post" src="https://user-images.githubusercontent.com/95406672/153595355-5e968697-371a-42dc-b6dc-5c05e4730aa2.jpg"></td>
+    <td><img alt="ajax-gif" src="https://user-images.githubusercontent.com/95406672/153595561-af55f56e-4567-4759-8bdf-37f2ef4cf42c.gif"></td>
+  </tr>
 </table>
 
 ## 使用技術
