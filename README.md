@@ -51,7 +51,7 @@ password: test
   * 投稿一覧、いいねした投稿一覧、ユーザー一覧、コメント一覧など
 
 ## 使用画面
-<img alt="petphoto-toppage" src="https://user-images.githubusercontent.com/95406672/153592771-b7b8e353-e5f0-49b9-a1e1-8f256bf28349.png">
+<img width="50%" alt="petphoto-toppage" src="https://user-images.githubusercontent.com/95406672/153592771-b7b8e353-e5f0-49b9-a1e1-8f256bf28349.png">
 
 
 ## 使用技術
