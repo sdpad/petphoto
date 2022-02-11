@@ -51,8 +51,12 @@ password: test
   * 投稿一覧、いいねした投稿一覧、ユーザー一覧、コメント一覧など
 
 ## 使用画面
-<img width="50%" alt="petphoto-toppage" src="https://user-images.githubusercontent.com/95406672/153592771-b7b8e353-e5f0-49b9-a1e1-8f256bf28349.png">
-
+<table>
+  <tr>
+    <td><img width="45%" alt="petphoto-toppage" src="https://user-images.githubusercontent.com/95406672/153592771-b7b8e353-e5f0-49b9-a1e1-8f256bf28349.png"></td>
+    <td><img width="45%" alt="petphoto-signup" src="https://user-images.githubusercontent.com/95406672/153594569-a4bdd66a-9b41-449e-8f92-fa044cb9defa.png"></td>
+  </tr>
+</table>
 
 ## 使用技術
 #### フロントエンド
